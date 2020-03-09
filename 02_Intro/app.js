@@ -53,3 +53,78 @@ console.log(numbers);
 numbers.unshift(0);
 console.log(numbers);
 // numbers = [] -> error
+
+// Primitive data type
+console.log(typeof name);
+const age = 45;
+console.log(typeof age);
+const hasKids = false;
+console.log(typeof hasKids);
+const car = null;
+console.log(typeof car);
+let undef = undefined;
+console.log(typeof undef);
+const sym = Symbol();
+console.log(typeof sym);
+
+// Reference data types
+const hobbies = ["movies", "music"];
+console.log(typeof hobbies);
+const address = { city: "Rome", street: "Piazza Navona 1" };
+console.log(typeof address);
+const today = new Date();
+console.log(today);
+console.log(typeof today);
+
+// type casting
+let val;
+val = 3;
+// number to string
+val = String(val);
+console.log(val);
+console.log(typeof val);
+// bool to string
+val = String(true);
+console.log(val);
+console.log(typeof val);
+// date to string
+val = String(new Date());
+console.log(val);
+console.log(typeof val);
+// array to string
+val = String([1, 2, 3, 4]);
+console.log(val);
+console.log(typeof val);
+// toString
+val = (5).toString();
+console.log(val);
+console.log(typeof val);
+
+// Output
+val = Number("3.123456");
+console.log(val.toFixed(2));
+console.log(typeof val);
+// string to number
+val = Number("5");
+console.log(val, typeof val);
+val = Number(true);
+console.log(val, typeof val);
+val = Number(false);
+console.log(val, typeof val);
+val = Number(null);
+console.log(val, typeof val);
+val = Number("hello");
+console.log(val, typeof val);
+val = Number([1, 2, 3]);
+console.log(val, typeof val);
+
+// parse
+val = parseInt("100.30");
+console.log(val);
+val = parseFloat("100.30");
+console.log(val);
+val = "test";
+
+// types example
+const x = "5" + 6;
+console.log(x);

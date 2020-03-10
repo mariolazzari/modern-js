@@ -128,3 +128,25 @@ val = "test";
 // types example
 const x = "5" + 6;
 console.log(x);
+
+// Math
+const num1 = 100;
+const num2 = 50;
+val = num1 + num2;
+val = num1 - num2;
+val = num1 * num2;
+val = num1 / num2;
+val = num1 % num2;
+console.log(val);
+
+console.log(`pi = ${Math.PI}, e = ${Math.E}`);
+console.log(`Round(pi) = ${Math.round(Math.PI)}`);
+console.log(`Ceil(pi) = ${Math.ceil(Math.PI)}`);
+console.log(`Floor(pi) = ${Math.floor(Math.PI)}`);
+console.log("sqrt(64) = ", Math.sqrt(64));
+console.log("abs(-3) = ", Math.abs(-3));
+console.log("3^2 = ", Math.pow(3, 2));
+console.log("min(1,2,3) = ", Math.min(1, 2, 3));
+console.log("max(1,2,3) = ", Math.max(1, 2, 3));
+console.log("rand = ", Math.random());
+console.log("Random number [0,20] = ", Math.floor(Math.random() * 20 + 1));

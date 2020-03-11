@@ -139,10 +139,11 @@ val = num1 / num2;
 val = num1 % num2;
 console.log(val);
 
-console.log(`pi = ${Math.PI}, e = ${Math.E}`);
-console.log(`Round(pi) = ${Math.round(Math.PI)}`);
-console.log(`Ceil(pi) = ${Math.ceil(Math.PI)}`);
-console.log(`Floor(pi) = ${Math.floor(Math.PI)}`);
+const { PI, E } = Math;
+console.log(`pi = ${PI}, e = ${E}`);
+console.log(`Round(pi) = ${Math.round(PI)}`);
+console.log(`Ceil(pi) = ${Math.ceil(PI)}`);
+console.log(`Floor(pi) = ${Math.floor(PI)}`);
 console.log("sqrt(64) = ", Math.sqrt(64));
 console.log("abs(-3) = ", Math.abs(-3));
 console.log("3^2 = ", Math.pow(3, 2));
@@ -150,3 +151,7 @@ console.log("min(1,2,3) = ", Math.min(1, 2, 3));
 console.log("max(1,2,3) = ", Math.max(1, 2, 3));
 console.log("rand = ", Math.random());
 console.log("Random number [0,20] = ", Math.floor(Math.random() * 20 + 1));
+
+// Strings
+const firstName = "Mario";
+const lastName = "Lazzari";

@@ -155,3 +155,10 @@ console.log("Random number [0,20] = ", Math.floor(Math.random() * 20 + 1));
 // Strings
 const firstName = "Mario";
 const lastName = "Lazzari";
+// concat
+console.log(firstName + lastName);
+val = firstName + " ";
+val += lastName;
+console.log(val);
+const age = 44;
+console.log(val + " is " + age);

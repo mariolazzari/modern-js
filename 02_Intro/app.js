@@ -155,10 +155,26 @@ console.log("Random number [0,20] = ", Math.floor(Math.random() * 20 + 1));
 // Strings
 const firstName = "Mario";
 const lastName = "Lazzari";
-// concat
 console.log(firstName + lastName);
 val = firstName + " ";
 val += lastName;
 console.log(val);
-const age = 44;
 console.log(val + " is " + age);
+console.log("Mario has " + firstName.length + " chars.");
+console.log(firstName.toLowerCase());
+console.log(firstName.toUpperCase());
+console.log(firstName[0]);
+console.log(firstName.indexOf("a"));
+console.log(lastName.lastIndexOf("a"));
+console.log(lastName.charAt(1));
+console.log("Last char:", firstName.charAt(firstName.length - 1));
+console.log(firstName.substr(0, 3));
+console.log(firstName.slice(1, 3));
+const str = "Hello there! My name is Mario.";
+val = str.split(" ");
+console.log(val);
+const fullName = firstName + " " + lastName;
+console.log(fullName.replace("Mario", "Maria"));
+console.log(fullName.includes(lastName));
+
+// Template litterals

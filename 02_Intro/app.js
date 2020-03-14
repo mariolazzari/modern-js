@@ -178,3 +178,17 @@ console.log(fullName.replace("Mario", "Maria"));
 console.log(fullName.includes(lastName));
 
 // Template litterals
+const job = "Developer";
+const city = "Coccaglio";
+const hi = name => `Hello ${name}`;
+
+let html = `<ul>
+  <li> Name: ${name}</li>
+  <li> Age: ${age}</li>
+  <li> Jpb: ${job}</li>
+  <li> City: ${city}</li>
+  <li> ${hi(name)}</li>
+  <li> ${age > 35 ? "Senior" : "Junior"}</li>
+ </ul>`;
+
+document.body.innerHTML = html;

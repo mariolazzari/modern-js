@@ -46,7 +46,7 @@ const person = { name: "Mario" };
 console.log("Person:", person);
 person.name = "Maria";
 console.log("Person:", person);
-const numbers = [1, 2, 3, 4, 5];
+let numbers = [1, 2, 3, 4, 5];
 console.log(numbers);
 numbers.push(6);
 console.log(numbers);
@@ -192,3 +192,39 @@ let html = `<ul>
  </ul>`;
 
 document.body.innerHTML = html;
+
+// Array
+numbers = [44, 89, 74, 23, 12, 99];
+const numebrs2 = new Array(22, 33, 44, 55, 66);
+const fruit = ["apple", "pear", "orange", "banana"];
+const mixed = [22, "hello", true, undefined, null];
+console.log(mixed);
+console.log("numbers count:", numbers.length);
+console.log("numbers is an array:", Array.isArray(numbers));
+console.log("4th element:", numbers[3]);
+numbers[2] = 100;
+console.log(numbers);
+console.log("Index of 100:", numbers.indexOf(100));
+numbers.push(250);
+console.log("push:", numbers);
+numbers.unshift(999);
+console.log("unshift:", numbers);
+const pop = numbers.pop();
+console.log(numbers, pop);
+const shift = numbers.shift();
+console.log(numbers, shift);
+const splice = numbers.splice(1, 3);
+console.log(splice);
+console.log("reverse:", fruit.reverse());
+console.log("concat", numbers.concat(numebrs2));
+console.log("sort:", fruit.sort());
+// sort numbers with compare
+const asc = numbers.sort((x, y) => x - y);
+console.log(asc);
+const desc = numbers.sort((x, y) => y - x);
+console.log(desc);
+// find
+const under50 = numbers.find(x => x < 50);
+console.log(under50);
+const over50 = numbers.find(x => x < 50);
+console.log(over50);

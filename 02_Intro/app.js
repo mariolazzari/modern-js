@@ -42,7 +42,7 @@ console.log(name);
 const pi = 3.14;
 console.log("pi:", pi);
 //pi = 0 -> error
-const person = { name: "Mario" };
+let person = { name: "Mario" };
 console.log("Person:", person);
 person.name = "Maria";
 console.log("Person:", person);
@@ -228,3 +228,23 @@ const under50 = numbers.find(x => x < 50);
 console.log(under50);
 const over50 = numbers.find(x => x < 50);
 console.log(over50);
+
+// objects
+person = {
+  firstName: "Mario",
+  lastName: "Lazzari",
+  age: 44,
+  address: {
+    city: "Coccaglio"
+  },
+  hobbies: ["sports", "tv"],
+  getFullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+console.log(person);
+console.log(person.firstName);
+console.log(person.getFullName());
+const people = [person];
+console.log(people);

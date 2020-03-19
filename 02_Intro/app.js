@@ -72,7 +72,7 @@ const hobbies = ["movies", "music"];
 console.log(typeof hobbies);
 const address = { city: "Rome", street: "Piazza Navona 1" };
 console.log(typeof address);
-const today = new Date();
+let today = new Date();
 console.log(today);
 console.log(typeof today);
 
@@ -248,3 +248,18 @@ console.log(person.firstName);
 console.log(person.getFullName());
 const people = [person];
 console.log(people);
+
+// Dates
+today = new Date();
+console.log(today);
+console.log(typeof today);
+let birthday = new Date("03-28-1975 04:00");
+console.log(birthday);
+birthday = new Date("January 20 1976");
+console.log(birthday);
+console.log("month:", birthday.getMonth());
+console.log("date", birthday.getDate());
+console.log("day", birthday.getDay());
+console.log("timestamp", birthday.getTime());
+birthday.setMonth(2);
+console.log("set march", birthday);

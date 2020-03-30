@@ -56,7 +56,7 @@ console.log(numbers);
 
 // Primitive data type
 console.log(typeof name);
-const age = 45;
+let age = 45;
 console.log(typeof age);
 const hasKids = false;
 console.log(typeof hasKids);
@@ -263,3 +263,111 @@ console.log("day", birthday.getDay());
 console.log("timestamp", birthday.getTime());
 birthday.setMonth(2);
 console.log("set march", birthday);
+
+// IF statement
+const id = 100;
+if (id == 100) {
+  console.log("id is 100");
+} else {
+  console.log("id is NOT 100");
+}
+
+// not equal
+if (id != 100) {
+  console.log("id in NOT equal to 100");
+}
+
+// if equal value and type
+if (id === "100") {
+  console.log("id is a string equal 100.");
+} else {
+  console.log("id is NOT a string equal 100.");
+}
+
+// test not defined
+if (typeof ID === "undefined") {
+  console.log("ID is not defined");
+}
+
+// greater / lesss
+if (id > 200) {
+  console.log("id is greater than 200.");
+} else {
+  console.log("id is less than 200.");
+}
+
+// if else
+const color = "yellow";
+if (color === "red") {
+  console.log("color is red");
+} else if (color === "blue") {
+  console.log("color is blue");
+} else {
+  console.log("color is yellow");
+}
+
+// logical op
+name = "Mario";
+age = 45;
+
+if (age > 0 && age < 12) {
+  console.log(`${name} is a kid`);
+} else if (age >= 12 && age < 18) {
+  console.log(`${name} is a guy`);
+} else {
+  console.log(`${name} is a man`);
+}
+
+if (age < 15 || age > 65) {
+  console.log(`${name} cannot run a race.`);
+} else {
+  console.log(`${name} can run a race.`);
+}
+
+// ternary operator
+console.log(
+  id === 100 ? `${id} is equal to 100.` : `${id} is NoT equal to 100.`
+);
+
+// switch
+switch (color) {
+  case "red":
+    console.log("color id red.");
+    break;
+  case "blue":
+    console.log("color id blue.");
+  default:
+    console.log("color is yellow.");
+}
+
+let day = "Today is ";
+
+switch (new Date().getDay()) {
+  case 0:
+    day += "Sunday";
+    break;
+  case 1:
+    day += "Monday";
+    break;
+  case 2:
+    day += "Tuesday";
+    break;
+  case 3:
+    day += "Wensday";
+    break;
+  case 4:
+    day += "Thirsday";
+    break;
+  case 5:
+    day += "Friday";
+    break;
+  case 6:
+    day += "Sunday";
+    break;
+  default:
+    days += "Unkwown";
+}
+
+console.log(day);
+
+// functions

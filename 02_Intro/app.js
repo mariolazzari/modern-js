@@ -371,3 +371,34 @@ switch (new Date().getDay()) {
 console.log(day);
 
 // functions
+function greet(firstName = "", lastName = "") {
+  //console.log("Hello");
+  return `Hello ${firstName} ${lastName}.`;
+}
+console.log(greet("Mario"));
+
+// function expressions
+const square = (x = 1) => x * x;
+console.log("3^2 = ", square(3));
+
+// immediatelly invocable
+(() => console.log("Immediatelly invocked!"))();
+(name => console.log(`Hello ${name}`))("Mary");
+
+// property methods
+const todo = {
+  add() {
+    console.log("Add todo");
+  },
+  edit(id) {
+    console.log("Edit todo", id);
+  }
+};
+
+todo.delete = function(id) {
+  console.log("Delete todo", id);
+};
+
+todo.add();
+todo.edit(1);
+todo.delete(2);

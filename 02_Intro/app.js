@@ -402,3 +402,52 @@ todo.delete = function(id) {
 todo.add();
 todo.edit(1);
 todo.delete(2);
+
+// Loops
+for (let i = 0; i < 10; i++) {
+  if (i === 3) {
+    console.log(`${i} is perfect number!`);
+    continue; // go to next iteration
+  }
+
+  if (i === 5) {
+    console.log(`Break on ${i}`);
+    break;
+  }
+  console.log(`For Number ${i}.`);
+}
+
+// While loop
+let i = 0;
+while (i <= 10) {
+  console.log(`While Number ${i}.`);
+  i++;
+}
+
+// Do while loop
+i = 0;
+do {
+  console.log("Do while number", i);
+  i++;
+} while (i < 10);
+
+// Array loop
+const cars = ["Ferrari", "Alfa Romeo", "Toyota", "Peugeot"];
+for (let i = 0; i < cars.length; i++) {
+  console.log(`Car ${i}: ${cars[i]}.`);
+}
+cars.forEach((car, i, arr) =>
+  console.log(`Car ${i + 1}/${arr.length}: ${car}`)
+);
+
+// for in loop
+user = {
+  firstName: "Mario",
+  lastName: "Lazzari",
+  age: 45
+};
+for (let x in user) {
+  console.log(`${x} = ${user[x]}`);
+}
+
+// Window object

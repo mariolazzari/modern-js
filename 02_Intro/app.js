@@ -451,3 +451,41 @@ for (let x in user) {
 }
 
 // Window object
+//window.alert("ciao");
+//const input = prompt();
+//alert(input);
+
+/*
+if (confirm("Are you sure?")) {
+  alert("YES");
+} else {
+  alert("NO");
+}
+*/
+
+// outer window height and width
+let height = window.outerHeight;
+let width = window.outerWidth;
+console.log(`Outer window size: ${height}x${width}`);
+// inner window height and width
+height = window.innerHeight;
+width = window.innerWidth;
+console.log(`Inner window size: ${height}x${width}`);
+// scroll position
+let scrollX = window.scrollX;
+let scrollY = window.scrollY;
+console.log(`Scroll position: ${scrollX}x${scrollY}`);
+// location
+console.log(window.location);
+console.log("query string:", window.location.search);
+// redirect
+//window.location.href = "https://google.it";
+// reload
+//window.location.reload();
+// history
+//window.history.go(-1); // go to previous page
+console.log(window.history.length);
+
+// Navigator -> browser used
+console.log(window.navigator);
+console.log("Browser language:", window.navigator.language);

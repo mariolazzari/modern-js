@@ -489,3 +489,37 @@ console.log(window.history.length);
 // Navigator -> browser used
 console.log(window.navigator);
 console.log("Browser language:", window.navigator.language);
+
+// Scope
+var a = 1;
+let b = 2;
+const c = 3;
+console.log("Global scopre", a, b, c);
+
+function test() {
+  var a = 4;
+  let b = 5;
+  const c = 6;
+  console.log("Function scopre", a, b, c);
+}
+test();
+console.log("Global scopre", a, b, c);
+
+// Block scope
+if (true) {
+  var a = 4;
+  let b = 5;
+  const c = 6;
+  console.log("IF scopre", a, b, c);
+}
+console.log("Global scopre", a, b, c);
+
+for (let a = 0; a < 10; a++) {
+  console.log("For let a:", a);
+}
+console.log("Global scopre", a, b, c);
+
+for (var a = 0; a < 10; a++) {
+  console.log("For var a:", a);
+}
+console.log("Global scopre", a, b, c);

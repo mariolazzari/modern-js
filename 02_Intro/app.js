@@ -180,7 +180,7 @@ console.log(fullName.includes(lastName));
 // Template litterals
 const job = "Developer";
 const city = "Coccaglio";
-const hi = name => `Hello ${name}`;
+const hi = (name) => `Hello ${name}`;
 
 let html = `<ul>
   <li> Name: ${name}</li>
@@ -224,9 +224,9 @@ console.log(asc);
 const desc = numbers.sort((x, y) => y - x);
 console.log(desc);
 // find
-const under50 = numbers.find(x => x < 50);
+const under50 = numbers.find((x) => x < 50);
 console.log(under50);
-const over50 = numbers.find(x => x < 50);
+const over50 = numbers.find((x) => x < 50);
 console.log(over50);
 
 // objects
@@ -235,12 +235,12 @@ person = {
   lastName: "Lazzari",
   age: 44,
   address: {
-    city: "Coccaglio"
+    city: "Coccaglio",
   },
   hobbies: ["sports", "tv"],
-  getFullName: function() {
+  getFullName: function () {
     return this.firstName + " " + this.lastName;
-  }
+  },
 };
 
 console.log(person);
@@ -383,7 +383,7 @@ console.log("3^2 = ", square(3));
 
 // immediatelly invocable
 (() => console.log("Immediatelly invocked!"))();
-(name => console.log(`Hello ${name}`))("Mary");
+((name) => console.log(`Hello ${name}`))("Mary");
 
 // property methods
 const todo = {
@@ -392,10 +392,10 @@ const todo = {
   },
   edit(id) {
     console.log("Edit todo", id);
-  }
+  },
 };
 
-todo.delete = function(id) {
+todo.delete = function (id) {
   console.log("Delete todo", id);
 };
 
@@ -444,7 +444,7 @@ cars.forEach((car, i, arr) =>
 user = {
   firstName: "Mario",
   lastName: "Lazzari",
-  age: 45
+  age: 45,
 };
 for (let x in user) {
   console.log(`${x} = ${user[x]}`);

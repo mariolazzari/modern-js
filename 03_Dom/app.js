@@ -61,3 +61,38 @@ document.querySelector("ul li:nth-child(4").textContent = "4th task";
 
 // query selector all
 console.log("Total tasks:", document.querySelectorAll("li").length);
+
+// get elements by class name
+let items = document.getElementsByClassName("collection-item");
+console.log("Collection items:", items);
+let firstItem = items[0];
+console.log("First element:", firstItem);
+// set first element
+firstItem.style.color = "red";
+items[3].textContent = "Terzo elemento";
+
+// get element by tag name
+let lis = document.getElementsByTagName("li");
+console.log("LI items:", lis);
+let firstLI = lis[0];
+console.log("First LI element:", firstLI);
+// set first element
+firstLI.style.color = "red";
+lis[3].textContent = "Quarto LI";
+// convert html collection
+lis = Array.from(lis);
+lis.reverse();
+lis.forEach((li, i) => {
+  console.log(li.className);
+  li.textContent = `${i} - forEach.`;
+});
+
+// query selector all
+items = document.querySelectorAll("ui.collection li.collection-item");
+items.forEach((i) => console.log(i));
+
+const liOdd = document.querySelectorAll("li:nth-child(odd)");
+liOdd.forEach((li, i) => (li.textContent = `${i} - dispari.`));
+const liEven = document.querySelectorAll("li:nth-child(even)");
+liEven.forEach((li, i) => (li.textContent = `${i} - pari.`));
+liOdd.forEach((li) => (li.style.background = "#f3f3f3"));

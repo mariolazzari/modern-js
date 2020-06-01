@@ -121,3 +121,19 @@ console.log("next sibling:", listItem.nextSibling);
 console.log("next element sibling:", listItem.nextElementSibling);
 console.log("prev sibling:", listItem.previousSibling);
 console.log("prev element sibling:", listItem.previousElementSibling);
+
+// Create new element
+li = document.createElement("li");
+li.className = "collection-item";
+li.id = "new-element";
+li.setAttribute("title", "New item");
+li.appendChild(document.createTextNode("New item to append"));
+//list.appendChild(li);
+document.querySelector("ul.collection").appendChild(li);
+// create link
+const link = document.createElement("a");
+link.className = "delete-item secondary-content";
+link.innerHTML = '<i class="fa fa-remove"></i>';
+li.appendChild(link);
+
+//lis.forEach((li) => li.appendChild(link));

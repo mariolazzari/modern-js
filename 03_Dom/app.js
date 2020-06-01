@@ -69,7 +69,7 @@ let firstItem = items[0];
 console.log("First element:", firstItem);
 // set first element
 firstItem.style.color = "red";
-items[3].textContent = "Terzo elemento";
+//items[3].textContent = "Terzo elemento";
 
 // get element by tag name
 let lis = document.getElementsByTagName("li");
@@ -84,7 +84,7 @@ lis = Array.from(lis);
 lis.reverse();
 lis.forEach((li, i) => {
   console.log(li.className);
-  li.textContent = `${i} - forEach.`;
+  //li.textContent = `${i} - forEach.`;
 });
 
 // query selector all
@@ -92,13 +92,13 @@ items = document.querySelectorAll("ui.collection li.collection-item");
 items.forEach((i) => console.log(i));
 
 const liOdd = document.querySelectorAll("li:nth-child(odd)");
-liOdd.forEach((li, i) => (li.textContent = `${i} - dispari.`));
+//liOdd.forEach((li, i) => (li.textContent = `${i} - dispari.`));
 const liEven = document.querySelectorAll("li:nth-child(even)");
-liEven.forEach((li, i) => (li.textContent = `${i} - pari.`));
+//liEven.forEach((li, i) => (li.textContent = `${i} - pari.`));
 liOdd.forEach((li) => (li.style.background = "#f3f3f3"));
 
 // traversing DOM
-const list = document.querySelector("ul.collection");
+let list = document.querySelector("ul.collection");
 const listItem = document.querySelector("li.collection-item:first-child");
 
 console.log(listItem);
@@ -128,12 +128,40 @@ li.className = "collection-item";
 li.id = "new-element";
 li.setAttribute("title", "New item");
 li.appendChild(document.createTextNode("New item to append"));
-//list.appendChild(li);
+list.appendChild(li);
 document.querySelector("ul.collection").appendChild(li);
 // create link
-const link = document.createElement("a");
+let link = document.createElement("a");
 link.className = "delete-item secondary-content";
 link.innerHTML = '<i class="fa fa-remove"></i>';
 li.appendChild(link);
 
-//lis.forEach((li) => li.appendChild(link));
+// replace
+const newHeading = document.createElement("h2");
+newHeading.appendChild(document.createTextNode("Task list"));
+const oldHeading = document.getElementById("task-title");
+const cardAction = document.querySelector(".card-action");
+cardAction.replaceChild(newHeading, oldHeading);
+// remove
+lis = document.querySelectorAll("li");
+list = document.querySelector("ul");
+lis[0].remove();
+// remove child
+list.removeChild(lis[3]);
+
+// classes
+const firstLi = document.querySelector("li:first-child");
+
+console.log(firstLi);
+
+//link = firstLi.children[0];
+console.log("li class:", link.className, list.classList);
+list.classList.add("test");
+list.classList.remove("test");
+
+// attributes
+console.log(link.getAttribute("href"));
+link.setAttribute("href", "http://google.it");
+if (!link.hasAttribute("title")) {
+  link.setAttribute("title", "new-title");
+}

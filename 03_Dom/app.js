@@ -165,3 +165,19 @@ link.setAttribute("href", "http://google.it");
 if (!link.hasAttribute("title")) {
   link.setAttribute("title", "new-title");
 }
+
+// Events
+document.querySelector(".clear-tasks").addEventListener("click", (e) => {
+  e.preventDefault();
+  // event target
+  console.log(e.target.id);
+  console.log(e.target.className);
+  console.log(e.target.classList);
+  // event type
+  console.log(e.type);
+  // time stamps
+  console.log(e.timeStamp);
+  // position
+
+  //console.log(e.clientX, clientY, e.offsetX, e.offsetY);
+});

@@ -96,3 +96,28 @@ liOdd.forEach((li, i) => (li.textContent = `${i} - dispari.`));
 const liEven = document.querySelectorAll("li:nth-child(even)");
 liEven.forEach((li, i) => (li.textContent = `${i} - pari.`));
 liOdd.forEach((li) => (li.style.background = "#f3f3f3"));
+
+// traversing DOM
+const list = document.querySelector("ul.collection");
+const listItem = document.querySelector("li.collection-item:first-child");
+
+console.log(listItem);
+console.log("Child nodes:", list.childNodes);
+console.log("Children:", list.children);
+list.children[1].textContent = "Modificato da children.";
+// cchildren of children
+console.log("children of children:", list.children[3].children);
+console.log("First child:", list.firstChild);
+console.log("First element child:", list.firstElementChild);
+console.log("Last child:", list.lastChild);
+console.log("Last element child:", list.lastElementChild);
+console.log("Elements count:", list.childElementCount);
+// Parent
+console.log("parent node:", listItem.parentNode);
+console.log("parent element:", listItem.parentElement);
+console.log("parent of parent element:", listItem.parentElement.parentElement);
+// siblings
+console.log("next sibling:", listItem.nextSibling);
+console.log("next element sibling:", listItem.nextElementSibling);
+console.log("prev sibling:", listItem.previousSibling);
+console.log("prev element sibling:", listItem.previousElementSibling);

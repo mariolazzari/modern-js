@@ -181,3 +181,32 @@ document.querySelector(".clear-tasks").addEventListener("click", (e) => {
 
   //console.log(e.clientX, clientY, e.offsetX, e.offsetY);
 });
+
+// mouse events
+const clearBtn = document.querySelector(".clear-tasks");
+const card = document.querySelector(".card");
+const heading = document.querySelector(".mouse-pos");
+
+// event handler
+const runEvent = (e) => {
+  console.log(`Event type: ${e.type}`);
+  if (e.type === "mousemove") {
+    heading.innerText = `Mouse position: (${e.offsetX},${e.offsetY})`;
+    document.body.style.background = `rgb(${e.offsetX},${e.offsetY},40)`;
+  }
+
+  if (e.type === "mouseleave") {
+    heading.innerText = "";
+    document.body.style.background = "white";
+  }
+};
+// subscribe events
+clearBtn.addEventListener("click", runEvent);
+clearBtn.addEventListener("dblclick", runEvent);
+clearBtn.addEventListener("mousedown", runEvent);
+clearBtn.addEventListener("mouseup", runEvent);
+card.addEventListener("mouseenter", runEvent);
+card.addEventListener("mouseleave", runEvent);
+//card.addEventListener("mouseover", runEvent);
+//card.addEventListener("mouseout", runEvent);
+card.addEventListener("mousemove", runEvent);

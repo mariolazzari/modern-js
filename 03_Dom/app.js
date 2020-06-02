@@ -184,7 +184,7 @@ document.querySelector(".clear-tasks").addEventListener("click", (e) => {
 
 // mouse events
 const clearBtn = document.querySelector(".clear-tasks");
-const card = document.querySelector(".card");
+let card = document.querySelector(".card");
 const heading = document.querySelector(".mouse-pos");
 
 // event handler
@@ -241,3 +241,68 @@ taskInput.addEventListener("paste", onInputChange);
 // general event
 //taskInput.addEventListener("input", onInputChange);
 taskInput.addEventListener("onchange", onInputChange);
+
+// Evevnt bubblling
+const taskTitle = document.querySelector(".card-title");
+taskTitle.addEventListener("click", (e) => {
+  console.log("card title");
+});
+
+card = document.querySelector(".card");
+card.addEventListener("click", (e) => {
+  console.log("card");
+});
+const col = document.querySelector(".col");
+col.addEventListener("click", (e) => {
+  console.log("col");
+});
+
+// Event delegation
+/*
+const deleteItem = document.querySelector(".delete-item");
+deleteItem.addEventListener("click", (e) => {
+  console.log("delete item");
+});
+*/
+
+const deleteItem = (e) => {
+  if (e.target.parentElement.classList.contains("delete-item")) {
+    console.log("delete item");
+    e.target.parentElement.parentElement.remove();
+  }
+};
+
+document.body.addEventListener("click", deleteItem);
+
+// Local storage
+localStorage.setItem("name", "Mario");
+localStorage.removeItem("name");
+// get elements from lcal storage
+localStorage.setItem("name", "Mario");
+localStorage.setItem("age", 45);
+const myName = localStorage.getItem("name");
+const myAge = localStorage.getItem("age");
+console.log(`${myName} is ${myAge}.`);
+// clear local storage
+localStorage.clear();
+document.querySelector("form").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const task = document.getElementById("task").value;
+  let tasks;
+  if (localStorage.getItem("tasks") === null) {
+    tasks = [];
+  } else {
+    tasks = JSON.parse(localStorage.getItem("tasks"));
+  }
+  // save task
+  tasks.push(task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  alert("Task saved.");
+});
+
+// get saved tasks
+const tasks = JSON.parse(document.getItem("tasks"));
+tasks.forEach((task, i) => console.log(`Task ${i}: ${task}`));
+
+// Session storage
+sessionStorage.setItem("name", "Mary");

@@ -210,3 +210,34 @@ card.addEventListener("mouseleave", runEvent);
 //card.addEventListener("mouseover", runEvent);
 //card.addEventListener("mouseout", runEvent);
 card.addEventListener("mousemove", runEvent);
+
+// input events
+const form = document.querySelector("form");
+const taskInput = document.getElementById("task");
+// clear input
+taskInput.value = "";
+
+// on form submit event handler
+const onFormSubmit = (e) => {
+  e.preventDefault();
+  console.log("Form event:", e.type);
+};
+
+// on input key down event handler
+const onInputChange = (e) => {
+  console.log("Input event type:", e.type);
+  console.log(e.target.value);
+};
+
+// subscribe event
+form.addEventListener("submit", onFormSubmit);
+taskInput.addEventListener("keydown", onInputChange);
+taskInput.addEventListener("keyup", onInputChange);
+//taskInput.addEventListener("keypress", onInputChange);
+taskInput.addEventListener("focus", onInputChange);
+taskInput.addEventListener("blur", onInputChange);
+taskInput.addEventListener("cut", onInputChange);
+taskInput.addEventListener("paste", onInputChange);
+// general event
+//taskInput.addEventListener("input", onInputChange);
+taskInput.addEventListener("onchange", onInputChange);

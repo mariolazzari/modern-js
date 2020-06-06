@@ -130,3 +130,75 @@ Customer.prototype.greeting = function () {
 customer1.greeting();
 
 // Object create
+const personPrototypes = {
+  greeting: function () {
+    return `Hello ${this.firstName} ${this.lastName}`;
+  },
+  getsMarried: function (lastName) {
+    this.lastName = lastName;
+  },
+};
+
+const mary2 = Object.create(personPrototypes);
+mary2.firstName = "Mariarosa";
+mary2.lastName = "Sbardellati";
+mary2.age = 44;
+mary2.getsMarried("Lazzari");
+console.log(mary2.greeting());
+
+const mario2 = Object.create(personPrototypes, {
+  firstName: { value: "Mario" },
+  lastName: { value: "Lazzari" },
+  age: { value: 45 },
+});
+console.log(mario2.greeting());
+
+// Classes
+class Person2 {
+  constructor(firstName, lastName, dob) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.birthday = new Date(dob);
+  }
+
+  greeting() {
+    return `Hello ${this.firstName} ${this.lastName}`;
+  }
+
+  getAge() {
+    const diff = Date.now() - this.birthday.getTime();
+    const ageDate = new Date(diff);
+    return Math.abs(ageDate.getUTCFullYear() - 1970);
+  }
+
+  getsMarried(lastName) {
+    this.lastName = lastName;
+  }
+
+  // static method
+  static addNumbers(x, y) {
+    return x + y;
+  }
+}
+
+const mary3 = new Person2("Mariarosa", "Sbardellati", "1976-01-20");
+console.log(mary3, mary3.greeting(), mary3.getAge());
+console.log(Person2.addNumbers(1, 2));
+
+// subclass
+class Customer2 extends Person2 {
+  constructor(firstName, lastName, phone, profile) {
+    super(firstName, lastName);
+    this.profile = phone;
+    this.profile = profile;
+  }
+
+  static getCost() {
+    return 500;
+  }
+}
+
+const customer2 = new Customer2("Customer", "Two", "030 987654", "Basic");
+console.log(customer2);
+console.log(customer2.greeting());
+console.log(Customer2.getCost());
